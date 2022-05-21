@@ -1,7 +1,6 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import Link from "./Link";
 import Post from "../../types/post";
-import Image from "next/image";
 
 type Props = {
   posts: Post[];
@@ -36,13 +35,6 @@ const MorePosts = ({ posts }: Props) => {
               url(${post.coverImage}) center / cover no-repeat`,
               }}
             >
-              {
-                <Image
-                  style={{ display: "none" }}
-                  src={post.coverImage}
-                  alt={`Cover Image for ${post.title}`}
-                />
-              }
               <Grid container>
                 <Link
                   href="/posts/[slug]"

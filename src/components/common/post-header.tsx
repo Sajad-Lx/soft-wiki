@@ -2,7 +2,6 @@ import { Box, Grid, Paper, Typography } from "@mui/material";
 import Author from "../../types/author";
 import DateFormatter from "./date-formatter";
 import AvatarAuthor from "./avatar";
-import Image from "next/image";
 
 type Props = {
   title: string;
@@ -45,13 +44,6 @@ const PostHeader = ({
           // backgroundPosition: "center",
         }}
       >
-        {
-          <Image
-            style={{ display: "none" }}
-            src={coverImage}
-            alt={`Cover Image for ${title}`}
-          />
-        }
         <Grid item xs>
           <Grid item xs>
             <Box
