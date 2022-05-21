@@ -3,6 +3,7 @@ import Author from "../../types/author";
 import Link from "./Link";
 import DateFormatter from "./date-formatter";
 import AvatarAuthor from "./avatar";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -50,7 +51,7 @@ const HeroPost = ({
         }}
       >
         {
-          <img
+          <Image
             style={{ display: "none" }}
             src={coverImage}
             alt={`Cover Image for ${title}`}

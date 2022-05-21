@@ -1,6 +1,7 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import Link from "./Link";
 import Post from "../../types/post";
+import Image from "next/image";
 
 type Props = {
   posts: Post[];
@@ -18,9 +19,8 @@ const MorePosts = ({ posts }: Props) => {
         columns={{ xs: 4, sm: 8, md: 12 }}
       >
         {posts.map((post) => (
-          <Grid item sm={12} md={6}>
+          <Grid key={post.slug} item sm={12} md={6}>
             <Paper
-              key={post.slug}
               sx={{
                 minHeight: 200,
                 backgroundColor: (theme) =>
@@ -37,7 +37,7 @@ const MorePosts = ({ posts }: Props) => {
               }}
             >
               {
-                <img
+                <Image
                   style={{ display: "none" }}
                   src={post.coverImage}
                   alt={`Cover Image for ${post.title}`}

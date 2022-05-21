@@ -1,8 +1,8 @@
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import Author from "../../types/author";
-import Link from "../common/Link";
 import DateFormatter from "./date-formatter";
 import AvatarAuthor from "./avatar";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -46,7 +46,7 @@ const PostHeader = ({
         }}
       >
         {
-          <img
+          <Image
             style={{ display: "none" }}
             src={coverImage}
             alt={`Cover Image for ${title}`}
